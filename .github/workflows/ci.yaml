@@ -1,0 +1,53 @@
+name: Symfony CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  symfony-ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mbstring, intl, pdo_mysql
+          tools: symfony, composer
+          coverage: none
+
+      - name: Install Composer dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest --no-interaction
+
+      - name: Warm up Symfony cache
+        run: php bin/console cache:warmup
+
+      - name: Lint YAML configuration
+        run: php bin/console lint:yaml config --parse-tags
+
+      - name: Lint Twig templates
+        run: php bin/console lint:twig templates
+
+      - name: Check routes
+        run: php bin/console debug:router
+
+      - name: Run PHPStan (level 6)
+        run: vendor/bin/phpstan analyse --no-progress --ansi
+
+      - name: Check PHP-CS-Fixer (dry-run)
+        run: vendor/bin/php-cs-fixer fix --dry-run --diff
+
+      - name: Security audit
+        run: symfony security:check || true
+
+      - name: Audit Composer dependencies
+        run: composer audit --no-interaction --no-ansi
+
+      #- name: Run PHPUnit tests
+        #run: ./vendor/bin/phpunit || true
