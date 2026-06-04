@@ -1,0 +1,241 @@
+/*****************************************************/
+/*****                   FORMS                   *****/
+/*****************************************************/
+/** Conteneur de formulaire **/
+.form-container {
+  font-family: inherit;
+  margin-bottom: 2rem;
+}
+
+/** Mise en page du formulaire **/
+.cta-form {
+  font-family: inherit;
+}
+
+/** Label du formulaire **/
+.form-row label {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+
+/** Champs input, textarea et select du formulaire **/
+.form-row input,
+.form-row textarea,
+.form-row select {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.8rem;
+  margin-bottom: 2.4rem;
+  font-family: inherit; /* Héritage de la famille de police */
+  color: inherit;
+  border: none;
+  background-color: var(--color-white);
+  border-radius: 9px;
+  box-shadow: var(--box-shadow-lighter);
+}
+
+/** Select du formulaire **/
+.form-row select {
+  
+}
+
+/* Mise en page du champ de type checkbox */
+.cta-form-check {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Case à cocher checkbox */
+.cta-form-check input {
+  width: 5%;
+  margin-bottom: 1.2rem;
+}
+
+/* Texte d'aide de champ de formulaire */
+.help-text {
+  font-size: 1.6rem;
+}
+
+/* Message d'erreur de champ de formulaire */
+.form-error {
+  color:red;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+
+.form-row ul li {
+  color: red;
+  font-size: 1.2rem;
+  font-weight: 500;
+  list-style-type: none;
+  margin-bottom: 1.2rem;
+}
+
+/** Placeholder des input et textarea du formulaire **/
+.form-row input::placeholder, .form-row textarea::placeholder {
+  color: var(--color-grey-lighter);
+}
+
+/*****************************************************/
+/***                  CONTACT FORM                 ***/
+/*****************************************************/
+/* CTA - Call To Action */
+.section-contact-cta-form {
+  padding: 9.6rem 0;
+  background-color: var(--color-main-tint);
+  /*background-image: linear-gradient(to bottom, var(--color-main-tint), var(--color-white)); /* Fond avec dégradé */
+}
+
+.contact-cta-container {
+  display: grid;
+  max-width: 130rem;
+  margin: 0 auto; 
+  grid-template-columns: 2fr 1fr;
+  background-color: var(--color-main-tint);
+  overflow: hidden;
+  border-radius: 2.5rem;
+}
+
+.contact-cta-text-box {
+  padding: 6.4rem;
+  color: var(--color-main-text);
+  background-color: var(--color-main-tint);
+}
+
+.contact-cta-text {
+  font-size: 1.8rem;
+  color: var(--color-main-text);
+  line-height: 1.8;
+  margin-bottom: 4.8rem;
+}
+
+/* Image de fonds avec dégradé */
+.contact-cta-img-box {
+  /* background-image: linear-gradient(to bottom, var(--gradient-main-tint), var(--gradient-main-lighter)), url('../img/hubble_telescope.jpg'); */
+  background-size: cover;
+  background-position: center;
+}
+
+/* Mise en page du formulaire de contact */
+.contact-cta-form {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3.2rem;
+  row-gap: 2.4rem;
+}
+
+/* Focus du formulaire de contact */
+.contact-cta-form *:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.8rem rgba(179, 84, 82, 0.5);
+}
+
+/*****************************************************/
+/***              AUTHENTIFICATION FORM            ***/
+/*****************************************************/
+.section-authentification-form {
+  padding: 9.6rem 0;
+  background-color: var(--color-main-tint);
+}
+
+.authentification-container {
+  display: grid;
+  max-width: 130rem;
+  margin: 0 auto; 
+  grid-template-columns: 2fr 1fr;
+  background-color: var(--color-main-tint);
+  overflow: hidden;
+  border-radius: 2.5rem;
+}
+
+.authentification-text-box {
+  padding: 6.4rem;
+  color: var(--color-main-text);
+  background-color: var(--color-main-tint);
+}
+
+.authentification-text {
+  font-size: 1.8rem;
+  color: var(--color-main-text);
+  line-height: 1.8;
+  margin-bottom: 4.8rem;
+}
+
+/* Image de fonds avec dégradé */
+.authentification-img-box {
+  background-image: linear-gradient(to bottom, var(--gradient-main-tint), var(--gradient-main-lighter)), url('../img/hubble_telescope.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Mise en page du formulaire d'authentification */
+.authentification-form {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3.2rem;
+  row-gap: 2.4rem;
+}
+
+/* Focus du formulaire d'authentification */
+.authentification-form *:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.8rem rgba(179, 84, 82, 0.5);
+}
+
+.authentification-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.7rem;
+}
+
+.authentification-list {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1.2rem;
+}
+
+.authentification-list a:link,
+.authentification-list a:visited {
+  font-weight: 500;
+  font-size: 1.8rem;
+  transition: all 0.3s;
+}
+
+.authentification-list a:hover,
+.authentification-list a:active {
+  color: var(--color-main-darker);
+}
+
+/*****************************************************/
+/***                    ADMIN FORM                 ***/
+/*****************************************************/
+
+/* Mise en page du formulaire d'administration */
+.admin-form {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3.2rem;
+  row-gap: 2.4rem;
+  background-color: var(--color-main-tint);
+  padding: 6.4rem;
+  border-radius: 1rem;
+}
+
+.admin-form figure {
+  text-align: center;
+}
+
+.admin-form img {
+  border-radius: 1rem;
+}
+
+/* Focus du formulaire d'administration */
+.admin-form *:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.8rem rgba(179, 84, 82, 0.5);
+}

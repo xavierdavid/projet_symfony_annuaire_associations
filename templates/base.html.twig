@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         
@@ -10,27 +10,37 @@
         {% block metadescription %}
             <meta name="description" content="Annuaire en ligne des associations d'Eure-et-Loir développé par le centre de ressources VIA28">
         {% endblock %}
+
+        {# Balise meta viewport - Responsive design #}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        {# Ionicons #}
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
         
         {# Styles CSS #}
         {% block stylesheets %}
-            <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         {% endblock %}
        
         {# Scripts #}
         {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
+            {% block importmap %}{{ importmap(['app']) }}{% endblock %}
         {% endblock %}
     </head>
+    
     <body>
+
+        {# Inclusion du header #}
+        {% include "partials/_header.html.twig" %}
+
+        {# Affichage des messages flash #}
+
+        {# Affichage du body #}
         {% block body %}
-            {# Inclusion du header #}
 
-            {# Affichage des messages flash #}
-
-            {# Affichage du body #}
-
-            {# Inclusion du footer #}
-        
         {% endblock %}
+        
+        {# Inclusion du footer #}
     </body>
 </html>

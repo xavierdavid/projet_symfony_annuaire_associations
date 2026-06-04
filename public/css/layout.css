@@ -1,0 +1,317 @@
+/*****************************************************/
+/***                    CONTAINERS                 ***/
+/*****************************************************/
+
+/** Container de pages - Front **/
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/** Container de pages - Interface d'administration **/
+.admin-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/*****************************************************/
+/***                    GRID LAYOUT                ***/
+/*****************************************************/
+
+/* Conteneurs de grille */
+.container-grid {
+  max-width: 120rem; /* Largeur définie à 120rem (environ 1140 px) s'ajustant à l'écran pour une taille inférieure à 120rem */
+  padding: 0 3.2rem;
+  margin: 0 auto;
+}
+
+/* Grille */ 
+.grid {
+  display: grid;
+  column-gap: 6.4rem;
+  row-gap: 9.6rem;
+}
+
+/* 2 colonnes */
+.grid--2--cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* 3 colonnes */
+.grid--3--cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* 4 colonnes */
+.grid--4--cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* 5 colonnes */
+.grid--5--cols {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+/* Centrage vertical des éléments de grille */
+.grid--center-v {
+  align-items: center;
+}
+
+/*****************************************************/
+/***                     HEADER                    ***/
+/*****************************************************/
+.logo {
+  max-width: 12rem;
+  height: auto;
+  padding: 0.8rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: var(--color-main-tint); */
+  height: 9.6rem; /* Hauteur fixe du header pour la rendre collante (sticky) en haut de la page lors du défilement */
+  padding: 0 4.8rem;
+  position: relative;
+  z-index: 1;
+}
+
+.section-logo {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.site-title {
+  font-size: 1.8rem;
+}
+
+.site-title strong {
+  font-weight: 700;
+  color: var(--color-main-darker);
+}
+
+/*****************************************************/
+/***                     FOOTER                    ***/
+/*****************************************************/
+
+/* Main footer */
+.main-footer {
+  width: 100%;
+  padding: 12.8rem 0;
+  background-color: var(--color-main-lighter);
+  border-top: 1px solid var(--color-main-tint);
+}
+
+.logo-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-logo {
+  display: block;
+  margin-bottom: 3.2rem;
+}
+
+.copyright {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: var(--color-main-text);
+  margin-top: auto; /* Astuce : Le copyright est poussé vers le bas grâce au flexbox du logo-col */
+}
+
+.footer-heading {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 4rem;
+  color: var(--color-main-text);
+}
+
+.social-links {
+  list-style: none;
+  display: flex;
+  gap: 2.4rem;
+}
+
+.social-icon,
+.address-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+}
+
+.footer-address {
+  font-style: normal;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: var(--color-main-text);
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.footer-site-title {
+  margin-bottom: 2.4rem;
+}
+
+.address-item {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.footer-link:link,
+.footer-link:visited {
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: var(--color-main-text);
+  transition: all 0.3s;
+}
+
+.footer-link:hover,
+.footer-link:active {
+  color: var(--color-white);
+}
+
+.main-footer a {
+  display: block;
+}
+
+/* Footer newsletter form */
+.newsletter-form label {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+.newsletter-form input::placeholder{
+  font-size: 1.6rem;
+}
+
+.newsletter-form button {
+  font-size: 1.6rem;
+}
+
+/* Admin footer */
+.admin-footer {
+  width: 100%;
+  padding: 4.8rem 0;
+  background-color: var(--color-main-lighter);
+}
+
+.admin-footer p {
+  text-align: center;
+  color: var(--color-grey-darker);
+  font-weight: 600;
+}
+
+.admin-footer a {
+  display: block;
+  text-align: center;
+}
+
+/*****************************************************/
+/***                     ADMIN                     ***/
+/*****************************************************/
+.admin-container {
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: 1fr 5fr;
+  gap: 6.4rem; /* Ecart entre les colonnes */
+  align-items: center;
+}
+
+.admin-nav {
+  padding: 6.4rem;
+  background-color: var(--color-grey-tint);
+  /*min-height: 80rem;*/
+  min-height: 100%;
+}
+
+.admin-content {
+  padding: 6.4rem;
+  min-height: 80rem;
+}
+
+.admin-img-box,
+.admin-text-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom : 3rem;
+}
+
+/* .admin-edit-box {
+
+} */
+
+.admin-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.7rem;
+}
+
+.admin-list {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.admin-list a:link,
+.admin-list a:visited {
+  font-weight: 500;
+  font-size: 1.8rem;
+  transition: all 0.3s;
+}
+
+.admin-list a:hover,
+.admin-list a:active {
+  color: var(--color-main-darker);
+}
+
+.edit-box-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.edit-box-header p {
+  font-size: 2rem; 
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.edit-box {
+  display:flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.edit-box-info {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.edit-box-item {
+  font-weight: 600;
+  color: var(--color-main-darker);
+  margin-top: 1.5rem;
+}
+
+/*****************************************************/
+/***                   USER SPACE                  ***/
+/*****************************************************/
+
+
+
+

@@ -1,0 +1,28 @@
+<header class="header" data-controller="mobile-menu">
+  <section class="section-logo">
+    <a href="{{path('app_home')}}" aria-label="Page d'accueil de l'annuaire des associations d'Eure-et-Loir">
+      <img src="../img/logo-annuaire-via28.png" class="logo" alt="Logo de l'annuaire en ligne des associations d'Eure-et-Loir">
+    </a>
+    <p class="site-title" aria-hidden="true">Annuaire <strong>VIA28</strong></p>
+  </section>
+  <section class="section-search">
+    <form action="" method=""></form>
+  
+  </section>
+  <nav class="main-nav">
+    <ul class="main-nav-list">
+      <li><a class="main-nav-link" href="{{path('app_home')}}">Accueil</a></li>
+      <li><a class="main-nav-link" href="#">Associations</a></li>
+      <li><a class="main-nav-link" href="#">Evènements</a></li>
+    {% if app.user %}
+
+    {% else %}
+      <li><a class="btn btn--full" href="#">Connexion</a></li>
+    </ul>
+    {% endif %}
+  </nav>
+  <button class="btn-mobile-nav" data-mobile-menu-target="button" data-action="click->mobile-menu#toggle" aria-controls="mobile-menu" aria-label="open menu" aria-expanded="false">
+    <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
+    <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
+  </button>
+</header>

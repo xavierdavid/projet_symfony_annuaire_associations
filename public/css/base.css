@@ -1,0 +1,284 @@
+/*
+--- 01 TYPOGRAPHY SYSTEM
+
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Font weights
+Default: Regular 400
+Medium 500 
+Semi-Bold 600 
+Bold 700
+
+- Line heights
+Default: 1
+Small: 1.05
+Medium: 1.2
+Paragraph defautl: 1.6
+
+- Letter spacing
+-0.5px
+0.75px
+
+- Google Fonts: https://fonts.google.com/ 
+
+- Popular Fonts : Roboto / Inter / Raleway / Rubik
+
+
+--- 02 COLOR TOOLS
+
+- Open Color: https://yeun.github.io/open-color/
+- Tint and Shade Generator: https://maketintsandshades.com/
+- Color Contrast Accessibility Checker : https://coolors.co/contrast-checker/112a46-acc8e5 
+
+
+--- 03 WHITESPACE
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+
+--- 04 BORDER-RADIUS
+
+Defaut: 9px
+
+
+--- 05 SHADOWS
+
+box-shadow-main: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+box-shadow-darker: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
+
+--- 06 ICONS TOOLS
+
+- Ionic: https://ionic.io/ionicons 
+- Fontawesome: https://fontawesome.com/ 
+*/
+
+/*****************************************************/
+/***                     FONTS                     ***/
+/*****************************************************/
+/* Raleway */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
+
+/*****************************************************/
+/***                     COLORS                    ***/
+/*****************************************************/
+:root {
+  /* Main color */
+  --color-main: rgb(255, 146, 43);
+  --color-main-lighter: #ffa94d;
+  --color-main-darker: rgb(253, 126, 20);
+  --color-main-tint: #fff4e6;
+  --color-main-text:#f08c00;
+  /* Accent color */
+  --color-accent: #74b816;
+  --color-accent-lighter:#a9e34b; 
+  --color-accent-darker: #5c940d;
+  --color-accent-tint: #f4fce3;
+  /* Grey color */
+  --color-grey: #707070;
+  --color-grey-lighter: #a9a9a9;
+  --color-grey-darker:#292929;
+  --color-grey-text: #333333;
+  --color-grey-tint: #eeeeee;
+  /* Utility color */
+  --color-black: #000000; 
+  --color-white: #ffffff;
+  --color-danger: #DC3644;
+  --color-warning: #FFC107;
+  --color-success: #198754;
+  --color-info:#0DCAF0;
+  /* Gradient color */
+  --gradient-main: rgba(255, 146, 43, 0.35);
+  --gradient-main-lighter: rgba(255, 169, 77, 0.35);
+  --gradient-main-darker: rgba(253, 126, 20, 0.35);
+  --gradient-main-tint: rgba(255, 241, 241, 0.35);
+  --gradient-main-text:rgba(76, 35, 35, 0.35);
+  --gradient-white-transparent: rgba(255, 255, 255, 0.97);
+  --gradient-overlay: linear-gradient(rgba(34, 34, 34, 0.6), rgba(34, 34, 34, 0.6));
+}
+
+/*****************************************************/
+/***                   BOX-SHADOWS                 ***/
+/*****************************************************/
+:root {
+  --box-shadow-main: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+  --box-shadow-lighter: 0 1px 2px rgba(0, 0, 0, 0.1);
+  --box-shadow-darker: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
+}
+
+/*****************************************************/
+/***                  INITIAL RESET                ***/
+/*****************************************************/
+*, 
+::before, 
+::after {
+  box-sizing: border-box; /* Inclusion des marges internes et des bordures dans le calcul de la taille des éléments*/
+  margin: 0;
+  padding: 0;
+}
+
+/*****************************************************/
+/***                  GLOBAL SETTINGS              ***/
+/*****************************************************/
+html {
+  /* Taille de police par défaut du navigateur = 16px */
+  /* Redéfinition de la taille par défaut du navigateur à 62,5% de 16px, soit 10px /*
+  /* Utilisation de l'unité 'rem' pour optimiser le responsive design */
+  /* Etalonnage 1rem = 16px x 62,5% = 10px */
+  font-size: 62.5%;
+  /* Masquage des éléments qui dépassent le port d'affichage dans l'axe horizontal (menu mobile) */
+  /* Blocage du scroll horizontal au delà du port d'affichage */
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: var(--color-grey-darker);
+}
+
+/* Focus des liens, boutons et champs de formulaires - Accessibilité */
+*:focus {
+  /* Bordure de type outline */
+  outline: none;
+  /*outline: 4px dotted var(--color-main-darker);*/
+  /*outline-offset: 8px;*/
+  box-shadow: 0 0 0 0.8rem rgba(179, 84, 82, 0.5);
+}
+
+/* Centrage du texte */
+.center-text {
+  text-align: center;
+}
+
+/** Elément Strong **/
+strong {
+  font-weight: 500;
+}
+
+/*****************************************************/
+/***                     TITLES                    ***/
+/*****************************************************/
+.heading-primary,
+.heading-secondary,
+.heading-tertiary,
+.heading-quaternary {
+  font-weight: 700;
+  color: var(--color-main-text);
+  letter-spacing: -0.5px;
+}
+
+h1,
+.heading-primary {
+  font-size: 5.2rem;
+  line-height: 1.05;
+  margin-bottom: 3.2rem;
+}
+
+h2,
+.heading-secondary {
+  font-size: 4.4rem;
+  line-height: 1.2;
+  margin-bottom: 9.6rem;
+}
+
+h3,
+.heading-tertiary {
+  font-size: 3.6rem; 
+  line-height: 1.2;
+  margin-bottom: 3.2rem;
+}
+
+h4,
+.heading-quaternary {
+  font-size: 3rem; 
+  line-height: 1.2;
+  margin-bottom: 3.2rem;
+}
+
+.subheading {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--color-main-darker);
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+  letter-spacing: 0.75px;
+}
+
+/*****************************************************/
+/***                   PARAGRAPHS                  ***/
+/*****************************************************/
+p {
+  font-size: 1.6rem;
+  color: var(--color-grey-text);
+}
+
+/*****************************************************/
+/***                     LINKS                    ***/
+/*****************************************************/
+a:link, a:visited {
+  font-family: 'Raleway', sans-serif; 
+  font-size: 1.5rem;
+  color: var(--color-grey-text);
+  text-decoration: none;
+}
+
+a:hover {
+  font-size: 1.5rem;
+  color: var(--color-main);
+  text-decoration: none;
+}
+
+a:active {
+  font-style: italic;
+  text-decoration: none;
+}
+
+/*****************************************************/
+/***                      MARGINS                  ***/
+/*****************************************************/
+.margin-right-sm {
+  margin-right: 1.6rem !important;
+}
+
+/*****************************************************/
+/***                      IMAGES                   ***/
+/*****************************************************/
+.fullSizeImage
+.full-img {
+  max-width: 100%;
+  height: auto;
+}
+
+.xl-img {
+  width: 40rem;
+  height: auto
+}
+
+.largeSizeImage,
+.lg-img {
+  width: 20rem;
+  height: auto;
+}
+
+.mediumSizeImage,
+.md-img {
+  max-width: 10rem;
+  height: auto;
+}
+
+.smallSizeImage,
+.sm-img {
+  max-width: 6rem;
+  height: auto;
+}
+
+.verySmallSizeImage,
+.xs-img {
+  max-width: 4rem;
+  height: auto;
+}
+
